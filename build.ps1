@@ -27,11 +27,7 @@ function setVersion($versionNumber, $versionString){
     {
         Write-Host -ForegroundColor Red "[number] [versionString]  :  number=[\d]+ versionString=[\d]+\.[\d]+\.[\d]+"
         exit 1;
-    }
-
-    $file = ".\source\www\js\config.js"
-    $old = "var appVersionNumber = '[\d]+\.[\d]+\.[\d]+'"
-    versionFile $file $old $versionNumber $versionString
+    }    
 
     $file = ".\source\www\config.xml"
     $old = "version=""[\d]+\.[\d]+\.[\d]+"""
@@ -44,6 +40,10 @@ function setVersion($versionNumber, $versionString){
     $file = ".\source\res\xml\config.xml"
     $old = "version=""[\d]+\.[\d]+\.[\d]+"""
     versionFile $file $old $versionNumber $versionString
+
+    #$file = ".\source\www\js\config.js"
+    #$old = "var appVersionNumber = '[\d]+\.[\d]+\.[\d]+'"
+    #versionFile $file $old $versionNumber $versionString
 }
 
 
